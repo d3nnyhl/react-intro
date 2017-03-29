@@ -6,6 +6,9 @@
 
 import React from 'react';
 
+// Stylesheets .scss is like .css but it has built in scoping
+import '../stylesheets/components/LoginForm.scss';
+
 class LoginForm extends React.Component {
 
     constructor(props) {
@@ -39,8 +42,33 @@ class LoginForm extends React.Component {
     render() {
         // This is where you place your HTML. Inside of here goes components and other HTML elements
         return (
-            <form onSubmit={this.submitForm}>
-            </form>
+            <div class="login-page">
+                <div class="btn-login">
+                    <button class="btn-fblogin" type="fblogin" value="fblogin">Log in with Facebook</button>
+                    <button class="btn-googlelogin" type="googlelogin" value="googlelogin">Log in with Google</button>
+                </div>
+                <div class="or-separator">
+                    <span class="or-separator-text">or</span><hr>
+                </div>
+                <form class="login-form">
+                    <input 
+                        type="email" 
+                        required
+                        class="login-box" 
+                        placeholder="Email Address">
+                    <input 
+                        type="password" 
+                        required 
+                        class="login-box" 
+                        placeholder="Password">
+                    <div>
+                        <label><input type="checkbox" id="rememberMe" class="rememberMe" value="on">Remember me</label>
+                        <a href="/forgot_password" data-from="email">Forgot password?</a>
+                    </div>
+                    <button class="btn-submit" type="submit" value="Submit">Log in</button>
+                </form>
+            </div>
+            
         );
     }
 }

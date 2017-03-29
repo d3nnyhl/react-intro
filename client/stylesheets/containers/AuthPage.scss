@@ -3,6 +3,10 @@
 .auth {
     height: 100%;
     .login {
+        position: relative;
+        width: 25%;
+        top: 50%;
+        transform: translateY(50%);
 
     }
 }
